@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.svg', 'apple-touch-icon.png'],
+      includeAssets: ['theta-icon.svg', 'apple-touch-icon.png'],
       manifest: {
         name: 'ThetaYield',
         short_name: 'ThetaYield',
