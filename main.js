@@ -14,13 +14,13 @@ function calculateYields() {
   const strike = parseFloat(strikeInput.value);
   const dte = parseInt(dteInput.value, 10);
 
-  if (isNaN(premium) || isNaN(strike) || strike <= 0) {
+  if (isNaN(premium) || isNaN(strike) || strike <= 0 || (strike - premium) <= 0) {
     absoluteYieldEl.textContent = '--%';
     annualizedYieldEl.textContent = '--%';
     return;
   }
 
-  const roc = premium / strike;
+  const roc = premium / (strike - premium);
   absoluteYieldEl.textContent = (roc * 100).toFixed(2) + '%';
 
   if (!isNaN(dte) && dte > 0) {
